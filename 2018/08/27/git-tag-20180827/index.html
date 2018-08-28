@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="概述 内容主要  ​    讲解如何使用Shell命令创建和操作Git标签，实现版本发布。通读这篇文章大概需要2分钟。  Git标签简介  ​    Git标签（tag）可以针对某一时间点的版本做标记，常用于版本发布，即Git项目到达一定阶段后，可以借助tag，将稳定的代码发布成一个版本。这就解决了分支代码提交因覆盖很难获取前次代码的问题。Git中的标签总是和某次提交（commit）挂钩的，可以说">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-28T01:34:32.335Z">
+<meta property="og:updated_time" content="2018-08-28T01:41:33.912Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git标签功能实现版本发布">
 <meta name="twitter:description" content="概述 内容主要  ​    讲解如何使用Shell命令创建和操作Git标签，实现版本发布。通读这篇文章大概需要2分钟。  Git标签简介  ​    Git标签（tag）可以针对某一时间点的版本做标记，常用于版本发布，即Git项目到达一定阶段后，可以借助tag，将稳定的代码发布成一个版本。这就解决了分支代码提交因覆盖很难获取前次代码的问题。Git中的标签总是和某次提交（commit）挂钩的，可以说">
@@ -321,19 +321,19 @@
 
       
         <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><blockquote>
-<p>内容主要</p>
+<p><strong>内容主要</strong></p>
 </blockquote>
 <p>​    讲解如何使用Shell命令创建和操作Git标签，实现版本发布。通读这篇文章大概需要2分钟。</p>
 <blockquote>
-<p>Git标签简介</p>
+<p><strong>Git标签简介</strong></p>
 </blockquote>
 <p>​    Git标签（tag）可以针对某一时间点的版本做标记，常用于版本发布，即Git项目到达一定阶段后，可以借助tag，将稳定的代码发布成一个版本。这就解决了分支代码提交因覆盖很难获取前次代码的问题。Git中的标签总是和某次提交（commit）挂钩的，可以说，tag是对某次历史提交的引用，这样该明白tag的含义和用处了吧。</p>
 <blockquote>
-<p>实现细节</p>
+<p><strong>实现细节</strong></p>
 </blockquote>
 <p>​       在Git中打标签非常简单，用户可以查看所有标签列表和指定标签信息，也可以指定标签获取对应的代码。另外，本文档使用的标签都是附注标签，因为附注标签带有标签名和说明，日后还可以查看标签信息。这就模拟了一个制品库的基本功能。</p>
 <h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><blockquote>
-<h4 id="切换到需要打标签的分支上，创建一个附注标签"><a href="#切换到需要打标签的分支上，创建一个附注标签" class="headerlink" title="切换到需要打标签的分支上，创建一个附注标签"></a>切换到需要打标签的分支上，创建一个附注标签</h4></blockquote>
+<h2 id="切换到需要打标签的分支上，创建一个附注标签"><a href="#切换到需要打标签的分支上，创建一个附注标签" class="headerlink" title="切换到需要打标签的分支上，创建一个附注标签"></a>切换到需要打标签的分支上，创建一个附注标签</h2></blockquote>
 <ol>
 <li><p>查看当前分支：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git branch</span><br><span class="line">* dev</span><br><span class="line">  Master</span><br></pre></td></tr></table></figure>
@@ -355,7 +355,7 @@
 </li>
 </ol>
 <blockquote>
-<h4 id="对历史提交打标签，并查看标签详细信息"><a href="#对历史提交打标签，并查看标签详细信息" class="headerlink" title="对历史提交打标签，并查看标签详细信息"></a>对历史提交打标签，并查看标签详细信息</h4></blockquote>
+<h2 id="对历史提交打标签，并查看标签详细信息"><a href="#对历史提交打标签，并查看标签详细信息" class="headerlink" title="对历史提交打标签，并查看标签详细信息"></a>对历史提交打标签，并查看标签详细信息</h2></blockquote>
 <p>默认标签是打在最新一次提交（<strong>HEAD</strong>）上的。如果之前版本忘记打标签，中间又经历了多个版本，如何补打？方式是通过指定commit id打标签：</p>
 <ol>
 <li><p>查看历史提交，确定要补打commit的id：</p>
@@ -369,7 +369,7 @@
 </li>
 </ol>
 <blockquote>
-<h4 id="发布标签"><a href="#发布标签" class="headerlink" title="发布标签"></a>发布标签</h4></blockquote>
+<h2 id="发布标签"><a href="#发布标签" class="headerlink" title="发布标签"></a>发布标签</h2></blockquote>
 <p>通常的git push不会将本地标签推送到远程，需要进行显式的操作。</p>
 <ol>
 <li><p>发布指定标签：</p>
@@ -380,7 +380,7 @@
 </li>
 </ol>
 <blockquote>
-<h4 id="误打或需要修改标签时，要先删除，再打新标签"><a href="#误打或需要修改标签时，要先删除，再打新标签" class="headerlink" title="误打或需要修改标签时，要先删除，再打新标签"></a>误打或需要修改标签时，要先删除，再打新标签</h4></blockquote>
+<h2 id="误打或需要修改标签时，要先删除，再打新标签"><a href="#误打或需要修改标签时，要先删除，再打新标签" class="headerlink" title="误打或需要修改标签时，要先删除，再打新标签"></a>误打或需要修改标签时，要先删除，再打新标签</h2></blockquote>
 <ol>
 <li><p>删除本地标签：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git tag -d v1.2.0</span><br><span class="line">Deleted tag 'v1.2.0' (was 14c2dc6)</span><br></pre></td></tr></table></figure>
@@ -398,7 +398,7 @@
 </li>
 </ol>
 <blockquote>
-<h4 id="获取指定标签的代码"><a href="#获取指定标签的代码" class="headerlink" title="获取指定标签的代码"></a>获取指定标签的代码</h4></blockquote>
+<h2 id="获取指定标签的代码"><a href="#获取指定标签的代码" class="headerlink" title="获取指定标签的代码"></a>获取指定标签的代码</h2></blockquote>
 <p>首先你需要git clone到代码，然后</p>
 <ol>
 <li><p>你可以直接在当前分支获取指定tag代码（不推荐）：</p>
@@ -587,7 +587,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过程"><span class="nav-number">2.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#切换到需要打标签的分支上，创建一个附注标签"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">切换到需要打标签的分支上，创建一个附注标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对历史提交打标签，并查看标签详细信息"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">对历史提交打标签，并查看标签详细信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#发布标签"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">发布标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#误打或需要修改标签时，要先删除，再打新标签"><span class="nav-number">2.0.0.4.</span> <span class="nav-text">误打或需要修改标签时，要先删除，再打新标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取指定标签的代码"><span class="nav-number">2.0.0.5.</span> <span class="nav-text">获取指定标签的代码</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过程"><span class="nav-number">2.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#切换到需要打标签的分支上，创建一个附注标签"><span class="nav-number">2.1.</span> <span class="nav-text">切换到需要打标签的分支上，创建一个附注标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对历史提交打标签，并查看标签详细信息"><span class="nav-number">2.2.</span> <span class="nav-text">对历史提交打标签，并查看标签详细信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布标签"><span class="nav-number">2.3.</span> <span class="nav-text">发布标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#误打或需要修改标签时，要先删除，再打新标签"><span class="nav-number">2.4.</span> <span class="nav-text">误打或需要修改标签时，要先删除，再打新标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取指定标签的代码"><span class="nav-number">2.5.</span> <span class="nav-text">获取指定标签的代码</span></a></li></ol></li></ol></div>
             
 
           </div>
