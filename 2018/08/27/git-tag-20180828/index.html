@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Git, Git标签, 版本发布," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://ah-hui.github.io/blog/index.html">
+<meta name="description" content="概述 内容主要  ​    讲解如何使用Shell命令创建和操作Git标签，实现版本发布。通读这篇文章大概需要2分钟。  Git标签简介  ​    Git标签（tag）可以针对某一时间点的版本做标记，常用于版本发布，即Git项目到达一定阶段后，可以借助tag，将稳定的代码发布成一个版本。这就解决了分支代码提交因覆盖很难获取前次代码的问题。Git中的标签总是和某次提交（commit）挂钩的，可以说">
+<meta name="keywords" content="Git, Git标签, 版本发布">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git标签功能实现版本发布">
+<meta property="og:url" content="https://ah-hui.github.io/blog/2018/08/27/git-tag-20180828/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="概述 内容主要  ​    讲解如何使用Shell命令创建和操作Git标签，实现版本发布。通读这篇文章大概需要2分钟。  Git标签简介  ​    Git标签（tag）可以针对某一时间点的版本做标记，常用于版本发布，即Git项目到达一定阶段后，可以借助tag，将稳定的代码发布成一个版本。这就解决了分支代码提交因覆盖很难获取前次代码的问题。Git中的标签总是和某次提交（commit）挂钩的，可以说">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-28T01:34:32.335Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Git标签功能实现版本发布">
+<meta name="twitter:description" content="概述 内容主要  ​    讲解如何使用Shell命令创建和操作Git标签，实现版本发布。通读这篇文章大概需要2分钟。  Git标签简介  ​    Git标签（tag）可以针对某一时间点的版本做标记，常用于版本发布，即Git项目到达一定阶段后，可以借助tag，将稳定的代码发布成一个版本。这就解决了分支代码提交因覆盖很难获取前次代码的问题。Git中的标签总是和某次提交（commit）挂钩的，可以说">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://ah-hui.github.io/blog/"/>
+  <link rel="canonical" href="https://ah-hui.github.io/blog/2018/08/27/git-tag-20180828/"/>
 
 
 
 
 
-  <title>Hexo</title>
+  <title>Git标签功能实现版本发布 | Hexo</title>
   
 
 
@@ -140,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,9 +238,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -266,9 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/08/27/git-tag-20180828/" itemprop="url">Git标签功能实现版本发布</a></h1>
+          <h1 class="post-title" itemprop="name headline">Git标签功能实现版本发布</h1>
         
 
         <div class="post-meta">
@@ -318,9 +320,7 @@
       
 
       
-        
-          
-            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><blockquote>
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><blockquote>
 <p>内容主要</p>
 </blockquote>
 <p>​    讲解如何使用Shell命令创建和操作Git标签，实现版本发布。通读这篇文章大概需要2分钟。</p>
@@ -413,8 +413,6 @@
 </li>
 </ol>
 
-          
-        
       
     </div>
     
@@ -429,142 +427,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ah-hui.github.io/blog/blog/2018/08/15/index/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="辉">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/myavatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/08/15/index/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-15T13:59:23+08:00">
-                2018-08-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/blog/tags/Git-Git标签-版本发布/" rel="tag"># Git, Git标签, 版本发布</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Hi"><a href="#Hi" class="headerlink" title="Hi"></a>Hi</h1><p>第一次玩这个，见笑了各位！</p>
-<p><em>跟大家打个招呼：</em></p>
-<p><strong>Java</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">"Hello"</span>)</span><br></pre></td></tr></table></figure>
-<p><strong>Scala</strong></p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">println(<span class="string">"Hello"</span>)</span><br></pre></td></tr></table></figure>
-<p><strong>Spark</strong></p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.withColumn(columnName, when(col(columnName).notEqual(castedValue), <span class="string">"Hello"</span>).otherwise(col(columnName)))</span><br></pre></td></tr></table></figure>
-<p>我还会：Spring、SpringCloud、Docker</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2018/08/15/index/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -574,10 +466,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -585,6 +478,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -605,8 +502,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -671,6 +577,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过程"><span class="nav-number">2.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#切换到需要打标签的分支上，创建一个附注标签"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">切换到需要打标签的分支上，创建一个附注标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对历史提交打标签，并查看标签详细信息"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">对历史提交打标签，并查看标签详细信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#发布标签"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">发布标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#误打或需要修改标签时，要先删除，再打新标签"><span class="nav-number">2.0.0.4.</span> <span class="nav-text">误打或需要修改标签时，要先删除，再打新标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取指定标签的代码"><span class="nav-number">2.0.0.5.</span> <span class="nav-text">获取指定标签的代码</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -811,6 +733,10 @@
 
 
   
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
